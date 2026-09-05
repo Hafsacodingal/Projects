@@ -1,0 +1,26 @@
+CREATE TABLE Drinks (
+    DrinkID TEXT PRIMARY KEY,
+    DrinkName TEXT,
+    DrinkColor TEXT,
+    Price integer
+);
+ 
+INSERT INTO Drinks (DrinkID, DrinkName, DrinkColor, Price) VALUES
+('D1', 'Coca-Cola', 'Brown', 50),
+('D2', 'Pepsi', 'Brown', 45),
+('D3', 'Sprite', 'Clear', 40),
+('D4', 'Fanta', 'Orange', 35),
+('D5', 'Mountain Dew', 'Green', 55);
+
+
+SELECT * FROM Drinks
+WHERE Price = (SELECT min(Price) FROM Drinks);
+
+SELECT * FROM Drinks
+WHERE Price = (SELECT max(Price) FROM Drinks);
+
+SELECT SUM(Price) AS TotalPrice FROM Drinks;
+
+SELECT AVG(Price) AS AveragePrice FROM Drinks;
+
+SELECT COUNT(*) AS TotalDrinks FROM Drinks;

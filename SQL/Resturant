@@ -1,0 +1,31 @@
+CREATE TABLE Restaurant(
+    Name TEXT,
+    Neighborhood TEXT,
+    Cuisine TEXT,
+    Review REAL,
+    Price TEXT,
+    Health TEXT
+);
+
+INSERT INTO Restaurant (Name,Neighborhood,Cuisine,Review,Price,Health)VALUES
+('Peter', 'Downtown','Italian',4.5,'$$$','A'),
+('Jongro', 'Uptown','Korean',4.8,'$$$$','A'),
+('Sushi Place','Uptown','Japanese',4.2,'$$$$','A'),
+('Taco Town','Downtown','Mexican',4.0,'$$','B'),
+('Burger Joint','Midtown','American',3.8,'$','C'),
+('Curry House','Downtown','Indian',4.6,'$$$','A'),
+('Pasta Palace','Uptown','Italian',4.1,'$$$','B'),
+('Dim Sum Delight','Chinatown','Chinese',4.3,'$$$','A'),
+('Vegan Bistro','Midtown','Vegan',4.7,'$$$','A'),
+('BBQ Shack','Suburbs','Barbecue',4.0,'$$','B');
+
+SELECT DISTINCT Neighborhood FROM Restaurant;
+SELECT* FROM Restaurant WHERE Review > 4.5;
+SELECT* FROM Restaurant WHERE Price = '$$$' AND Health = 'A';
+SELECT* FROM Restaurant WHERE Cuisine = 'Italian';
+SELECT* FROM Restaurant WHERE Neighborhood IN ('Downtown', 'Uptown','Midtown');
+SELECT* FROM Restaurant WHERE Name LIKE '%Place%';
+SELECT* FROM Restaurant WHERE Review IN(4.0,4.5,4.8);
+SELECT* FROM Restaurant WHERE Health = 'A' AND Price IN('$$$','$$$$');
+SELECT* FROM Restaurant WHERE Cuisine = 'Mexican' OR Cuisine = 'Indian';
+SELECT* FROM Restaurant WHERE Neighborhood = 'Downtown' AND Review >= 4.0;

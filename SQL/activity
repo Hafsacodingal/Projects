@@ -1,0 +1,13 @@
+CREATE TABLE student(
+ROLLNol INTEGER,
+Name TEXT,
+Class TEXT
+);
+ INSERT INTO student(ROLLNol, Name, Class) VALUES
+ (1001,'Zarrar','12th'),
+ (1002,'Ali','11th'),
+ (1003,'Ayesha','10th'),
+ (1004,'Ahmed','9th'),
+ (1005,'Sara','8th');
+
+ SELECT * FROM student;

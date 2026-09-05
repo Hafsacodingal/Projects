@@ -1,0 +1,25 @@
+CREATE TABLE marine_observations (
+    id INT PRIMARY KEY,
+    animal_group VARCHAR(50),
+    observed_count INT,
+    estimated_weight_kg DECIMAL(10, 2),
+    depth_meters INT
+);
+
+INSERT INTO marine_observations VALUES (1, 'Mammal', 3, 4500.00, 120);
+INSERT INTO marine_observations VALUES (2, 'Fish', 25, 12.50, 45);
+INSERT INTO marine_observations VALUES (3, 'Mammal', 1, 800.00, 300);
+INSERT INTO marine_observations VALUES (4, 'Reptile', 2, 150.00, 15);
+INSERT INTO marine_observations VALUES (5, 'Fish', 50, 5.00, 20);
+
+SELECT DISTINCT animal_group 
+FROM marine_observations;
+
+SELECT COUNT(*) 
+FROM marine_observations 
+WHERE animal_group = 'Mammal';
+
+SELECT 
+    SUM(estimated_weight_kg) AS total_estimated_weight,
+    AVG(depth_meters) AS average_depth
+FROM marine_observations;

@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS Salesman(
+    salesman_id INT PRIMARY KEY,
+    name TEXT,
+    city TEXT,
+    commission REAL
+);
+
+INSERT INTO Salesman (salesman_id, name, city, commission) VALUES
+(5001, 'John Doe', 'New York', 0.15),
+(5002, 'Jane Smith', 'Los Angeles', 0.13),
+(5003, 'Emily Johnson', 'Chicago', 0.11),
+(5004, 'Michael Brown', 'Houston', 0.15),
+(5005, 'Sarah Davis', 'Phoenix', 0.09);
+
+SELECT * FROM Salesman;

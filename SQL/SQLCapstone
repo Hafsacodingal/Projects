@@ -1,0 +1,70 @@
+CREATE TABLE IF NOT EXISTS salesman(
+    salesman_id INT PRIMARY KEY,
+    Name TEXT,
+    City TEXT,
+    Commission TEXT
+);
+
+CREATE TABLE IF NOT EXISTS Customer(
+    customer_id INT PRIMARY KEY,
+    Name TEXT,
+    City TEXT,
+    Grade TEXT,
+    salesman_id TEXT
+);
+
+CREATE TABLE IF NOT EXISTS Order(
+    customer_id TEXT,
+    salesman_id TEXT,
+    City TEXT
+)
+
+INSERT INTO salesman (salesman_id,Name,City,Commission)VALUES
+(1,'Sara','Lahore','13.3'),
+(2,'zara','Karachi','16.00'),
+(3,'Noor','Lahore','14.7');
+
+INSERT INTO Customer(customer_id,Name,City,Grade,salesman_id) VALUES
+(1,'Ahmad','Karachi','3','1'),
+(2,'Talha','Kabal','2','3'),
+(3,'Zoha','Swat','1','2');
+
+INSERT INTO Orders(customer_id,salesman_id,City) VALUES
+('2','1','Karachi'),
+('3','2','Lahore'),
+('2','3','Kabal');
+
+SELECT *FROM salesman;
+SELECT *FROM Customer;
+SELECT *FROM Orders;
+
+SELECT Customer.Name,Salesman.Name
+FROM Customer
+JOIN Salesman
+ON Customer.City=Salesman.city;
+
+SELECT Customer.Name,Salesman.Name
+FROM Customer
+JOIN Salesman
+ON Customer.salesman_id=Salesman.salesman_id;
+
+SELECT *
+FROM "Orders"
+JOIN Customer
+ON "Orders".customer_id=Customer.customer_id
+JOIN Salesman
+ON "Orders".salesman_id=Salesman.salesman_id
+WHERE Customer.City!=Salesman.city;
+
+SELECT "Orders".*,Customer.Name
+FROM "Orders"
+JOIN Customer
+ON "Orders".customer_id=Customer.customer_id;
+
+SELECT Name,Grade
+FROM Customer
+WHERE Grade IS NOT NULL;
+
+
+
+

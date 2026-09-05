@@ -1,0 +1,33 @@
+CREATE TABLE ComputorStore(
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    price DECIMAL(10, 2),
+    stock_quantity INT
+);
+
+INSERT INTO ComputorStore VALUES (1, 'Gaming Laptop', 'Computers', 1200.00, 15);
+INSERT INTO ComputorStore VALUES (3, 'Wireless Mouse', 'Accessories', 25.00, 100);
+INSERT INTO ComputorStore VALUES (2, 'Office Desktop', 'Computers', 800.00, 8);
+INSERT INTO ComputorStore VALUES (4, 'Mechanical Keyboard', 'Accessories', 90.00, 45);
+INSERT INTO ComputorStore VALUES (5, '4K Monitor', 'Monitors', 350.00, 12);
+
+SELECT * 
+FROM ComputorStore 
+WHERE price > 100 AND stock_quantity > 0;
+
+SELECT * 
+FROM ComputorStore 
+WHERE product_name LIKE '%Laptop%';
+
+SELECT 
+    MIN(price) AS lowest_price, 
+    MAX(price) AS highest_price 
+FROM ComputorStore;
+
+UPDATE ComputorStore 
+SET price = 1150.00 
+WHERE product_id = 1;
+
+DELETE FROM ComputorStore 
+WHERE product_id = 3;

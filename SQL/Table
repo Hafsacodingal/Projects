@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS Jewelry(
+    jewelry_id INT PRIMARY KEY,
+    name TEXT,
+    type TEXT,
+    price REAL
+);
+
+INSERT INTO Jewelry (jewelry_id, name, type, price) VALUES
+(1, 'Diamond Ring', 'Ring', 5000.00),
+(2, 'Gold Necklace', 'Necklace', 1500.00),
+(3, 'Silver Bracelet', 'Bracelet', 300.00),
+(4, 'Platinum Earrings', 'Earrings', 2000.00);
+
+SELECT * FROM Jewelry
+WHERE price > 1000.00;

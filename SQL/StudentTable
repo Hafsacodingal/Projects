@@ -1,0 +1,33 @@
+CREATE TABLE Friend (
+    StudentID TEXT PRIMARY KEY,
+    FirstName TEXT,
+    LastName TEXT,
+    Age INTEGER,
+    Address TEXT
+);
+
+INSERT INTO Friend (StudentID, FirstName, LastName, Age, Address) VALUES
+('S1', 'Ram', 'Sharma', 18, 'Delhi'),
+('S2', 'Sujit', 'Verma', 19, 'Mumbai'),
+('S3', 'ram', 'Kaur', 20, 'Delhi'),
+('S4', 'Sujit', 'Kaur', 21, 'Delhi'),
+('S5', 'Sujit', 'Sharma', 18, 'Mumbai');
+
+
+SELECT * FROM Friend
+WHERE Age = 18 AND Address = 'Delhi';
+
+SELECT * FROM Friend
+WHERE FirstName = 'Ram' AND Age = 18 ;
+
+SELECT * FROM Friend
+WHERE FirstName = 'Ram' OR FirstName = 'Sujit';
+
+SELECT * FROM Friend
+WHERE FirstName = 'Ram' OR Age = 18 ;
+
+SELECT * FROM Friend
+WHERE FirstName = 'Ram' OR FirstName = 'Ramesh' AND Age = 18 ;
+
+
+

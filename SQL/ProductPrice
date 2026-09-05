@@ -1,0 +1,19 @@
+CREATE TABLE ProductPrice (
+    ProductID TEXT PRIMARY KEY,
+    ProductName TEXT,
+    Price integer
+);
+
+INSERT INTO ProductPrice (ProductID, ProductName, Price) VALUES
+('P1', 'Laptop', 50000),
+('P2', 'Mobile', 20000),
+('P3', 'Tablet', 15000),
+('P4', 'Monitor', 10000),
+('P5', 'Keyboard', 2000);
+
+
+SELECT * FROM ProductPrice
+WHERE Price = (SELECT min(Price) FROM ProductPrice);
+
+SELECT * FROM ProductPrice
+WHERE Price = (SELECT max(Price) FROM ProductPrice);
