@@ -2,7 +2,7 @@ CREATE TABLE Restaurant(
     Name TEXT,
     Neighborhood TEXT,
     Cuisine TEXT,
-    Review REAL,
+    Review REAL, 
     Price TEXT,
     Health TEXT
 ); 
