@@ -5,7 +5,7 @@ CREATE TABLE Restaurant(
     Review REAL,
     Price TEXT,
     Health TEXT
-);
+); 
 
 INSERT INTO Restaurant (Name,Neighborhood,Cuisine,Review,Price,Health)VALUES
 ('Peter', 'Downtown','Italian',4.5,'$$$','A'),
