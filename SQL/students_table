@@ -1,0 +1,23 @@
+CREATE TABLE students_table (
+    student_id INT,
+    name VARCHAR(50),
+    age INT,
+    final_score INT
+);
+
+INSERT INTO students_table (student_id, name, age, final_score) VALUES 
+(1, 'Alice Jones', 15, 85),
+(2, 'Bob Smith', 16, 72),
+(3, 'Charlie Brown', 15, 95),
+(4, 'Diana Prince', 17, 64),
+(5, 'Evan Wright', 16, 88);
+
+UPDATE students_table 
+SET final_score = 75 
+WHERE name = 'Bob Smith';
+
+SELECT * FROM students_table 
+WHERE final_score >= 80;
+
+SELECT * FROM students_table 
+ORDER BY final_score DESC;
