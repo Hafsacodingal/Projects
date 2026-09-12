@@ -1,0 +1,50 @@
+CREATE TABLE activities (
+    activity_id INT,
+    activity_name VARCHAR(50),
+    activity_type VARCHAR(50),
+    participants INT
+);
+
+INSERT INTO activities VALUES
+(1, 'Football', 'Sports', 30),
+(2, 'Basketball', 'Sports', 20),
+(3, 'Painting', 'Art', 15),
+(4, 'Drawing', 'Art', 25),
+(5, 'Yoga', 'Fitness', 18),
+(6, 'Running', 'Fitness', 30),
+(7, 'Cricket', 'Sports', 35),
+(8, 'Music', 'Art', 22);
+
+SELECT * FROM activities
+ORDER BY activity_name ASC;
+
+SELECT activity_name, activity_type, participants
+FROM activities;
+
+SELECT * FROM activities
+WHERE participants > 20;
+
+SELECT activity_type, COUNT(*) AS total_activities
+FROM activities
+GROUP BY activity_type;
+
+SELECT activity_type, SUM(participants) AS total_participants
+FROM activities
+GROUP BY activity_type;
+
+SELECT activity_type, AVG(participants) AS average_participants
+FROM activities
+GROUP BY activity_type;
+
+SELECT activity_type, COUNT(*) AS total_activities
+FROM activities
+GROUP BY activity_type
+HAVING COUNT(*) > 2;
+
+SELECT activity_type,
+SUM(participants) AS total_participants,
+AVG(participants) AS average_participants
+FROM activities
+GROUP BY activity_type
+HAVING AVG(participants) > 20
+ORDER BY average_participants DESC;
