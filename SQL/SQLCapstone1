@@ -1,0 +1,58 @@
+-- SQL Capstone Project 2
+
+CREATE TABLE students (
+    id INT,
+    name VARCHAR(50),
+    city VARCHAR(50),
+    marks INT
+);
+
+INSERT INTO students VALUES
+(1, 'Ali', 'Lahore', 85),
+(2, 'Ahmed', 'Karachi', 72),
+(3, 'Ayesha', 'Lahore', 91),
+(4, 'Bilal', 'Islamabad', 68),
+(5, 'Amir', 'Lahore', 85),
+(6, 'Sara', 'Karachi', 95);
+
+-- LIKE
+SELECT * FROM students
+WHERE name LIKE 'A%';
+
+SELECT * FROM students
+WHERE name LIKE '%a%';
+
+-- Filtering
+SELECT * FROM students
+WHERE marks > 80;
+
+SELECT * FROM students
+WHERE city = 'Lahore';
+
+-- Sorting
+SELECT * FROM students
+ORDER BY marks ASC;
+
+SELECT * FROM students
+ORDER BY marks DESC;
+
+SELECT * FROM students
+ORDER BY name ASC;
+
+-- DISTINCT
+SELECT DISTINCT city
+FROM students;
+
+SELECT DISTINCT marks
+FROM students;
+
+-- LIKE + WHERE + ORDER BY
+SELECT * FROM students
+WHERE name LIKE 'A%'
+ORDER BY marks DESC;
+
+-- DISTINCT + LIKE + ORDER BY
+SELECT DISTINCT city
+FROM students
+WHERE city LIKE 'L%'
+ORDER BY city;
